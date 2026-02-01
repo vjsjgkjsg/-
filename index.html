@@ -1,135 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>OS 17 - DROP SIMULATOR</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Дроп - Симулятор</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="phone">
-    <div id="fx-overlay"></div>
-
-    <div class="notch"></div>
-    
-    <div class="status-bar">
-        <div id="current-time">12:00</div>
-        <div class="status-icons">
-            <i class="fas fa-signal"></i>
-            <i class="fas fa-wifi"></i>
-            <div class="battery"><span>88%</span><i class="fas fa-battery-three-quarters"></i></div>
-        </div>
-    </div>
-
-    <div id="notif-center"></div>
-
-    <div id="home-screen" class="screen">
-        <div class="widgets">
-            <div class="widget clock-widget">
-                <div id="big-time">12:00</div>
-                <div id="current-date">Понедельник, 15 мая</div>
-            </div>
-        </div>
-        <div class="app-row">
-            <div class="app" onclick="OS.openApp('mchat')">
-                <div class="app-icon mchat-icon"><i class="fas fa-paper-plane"></i></div>
-                <span>M-Chat</span>
-                <div id="badge-mchat" class="badge"></div>
-            </div>
-            <div class="app" onclick="OS.openApp('kbank')">
-                <div class="app-icon kbank-icon">K</div>
-                <span>K-Bank</span>
-            </div>
-            <div class="app" onclick="OS.openApp('crypto')">
-                <div class="app-icon crypto-icon"><i class="fab fa-bitcoin"></i></div>
-                <span>Exchange</span>
-            </div>
-            <div class="app" onclick="OS.openApp('news')">
-                <div class="app-icon news-icon"><i class="fas fa-newspaper"></i></div>
-                <span>News</span>
-            </div>
-        </div>
-        <div class="dock">
-            <div class="dock-app" onclick="OS.openApp('phone')"><i class="fas fa-phone"></i></div>
-            <div class="dock-app" onclick="OS.openApp('safari')"><i class="fas fa-compass"></i></div>
-            <div class="dock-app" onclick="OS.openApp('messages')"><i class="fas fa-comment"></i></div>
-        </div>
-    </div>
-
-    <div id="app-mchat" class="screen app-window hidden">
-        <div class="app-nav chat-nav">
-            <div class="contact-info">
-                <div class="avatar">M</div>
-                <div>
-                    <div class="name">Менеджер (Online)</div>
-                    <div class="status">удаляющееся сообщения вкл.</div>
-                </div>
-            </div>
-        </div>
-        <div id="chat-messages" class="chat-container"></div>
-        <div id="chat-options" class="chat-footer"></div>
-    </div>
-
-    <div id="app-kbank" class="screen app-window hidden">
-        <div class="kbank-header">
-            <div class="logo">K-Bank</div>
-            <div class="profile"><i class="fas fa-user-circle"></i></div>
-        </div>
-        <div class="kbank-content">
-            <div class="balance-card">
-                <div class="label">Kaspi Gold</div>
-                <div class="amount" id="kb-balance">1 250,00 ₸</div>
-                <div class="number">**** 0092</div>
-            </div>
-            <div class="quick-actions">
-                <div class="q-btn" onclick="OS.showBankModal('transfer')">
-                    <div class="q-icon"><i class="fas fa-exchange-alt"></i></div>
-                    <span>Переводы</span>
-                </div>
-                <div class="q-btn">
-                    <div class="q-icon"><i class="fas fa-qrcode"></i></div>
-                    <span>QR</span>
-                </div>
-            </div>
-            <div class="transaction-history" id="kb-history">
-                <h3>История</h3>
-                </div>
-        </div>
-        <div id="bank-modal" class="bank-modal hidden">
-            <div class="modal-content">
-                <h3>Перевод клиенту</h3>
-                <input type="text" id="target-card" placeholder="Номер карты или телефона">
-                <input type="number" id="target-amount" placeholder="Сумма ₸">
-                <button onclick="OS.executeBankTransfer()">Подтвердить перевод</button>
-                <button onclick="OS.closeBankModal()" class="cancel">Отмена</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="app-news" class="screen app-window hidden">
-        <div class="app-nav">Новости РК</div>
-        <div id="news-list" class="news-container"></div>
-    </div>
-
-    <div id="jail-screen" class="screen hidden">
-        <div class="jail-overlay">
-            <div class="police-badge"></div>
-            <h1>ВНИМАНИЕ</h1>
-            <p>Ваша деятельность квалифицирована по статье 190 ч. 2 УК РК.</p>
-            <div class="stats-final">
-                <p>Отмыто: <span id="stat-money">0</span> ₸</p>
-                <p>Подельников: <span id="stat-deals">0</span></p>
-            </div>
-            <p class="warning">Легкие деньги ведут к тяжелым последствиям.</p>
-            <button onclick="location.reload()">НАЧАТЬ ЖИЗНЬ ЗАНОВО</button>
-        </div>
-    </div>
-
-    <div class="home-indicator" onclick="OS.goHome()"></div>
+<div id="game">
+  <div id="text"></div>
+  <div id="choices"></div>
 </div>
 
-<script src="script.js"></script>
+<script src="game.js"></script>
+<script src="chapter1.js"></script>
 </body>
 </html>
